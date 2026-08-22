@@ -50,6 +50,43 @@ npm test
 npm run preview
 ~~~
 
+## CI/CD and deployment
+
+This project uses GitHub Actions for continuous integration and deployment.
+
+The workflow is located at:
+
+~~~text
+.github/workflows/deploy.yml
+~~~
+
+For every pull request to the main branch, GitHub Actions runs:
+
+- Install dependencies with npm ci
+- Run tests with npm test
+- Run lint with npm run lint
+- Create a production build with npm run build
+
+For every push to the main branch, the same checks run and the dist folder is
+deployed to GitHub Pages.
+
+### GitHub Pages setup
+
+In the repository settings, configure:
+
+~~~text
+Settings
+→ Pages
+→ Build and deployment
+→ Source: GitHub Actions
+~~~
+
+The deployed application is available at:
+
+~~~text
+https://brightpongpak.github.io/AscendMoney-mini-project/
+~~~
+
 ## Supported features
 
 ### Product list
