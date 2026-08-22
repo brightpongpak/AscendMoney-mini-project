@@ -11,6 +11,8 @@ Users can browse products, filter the catalog, sort results and view product det
 - Ant Design
 - Ant Design Icons
 - Oxlint
+- Vitest
+- React Testing Library
 
 ## Setup
 
@@ -40,6 +42,9 @@ npm run build
 
 # Run the linter
 npm run lint
+
+# Run tests
+npm test
 
 # Preview the production build locally
 npm run preview
@@ -73,7 +78,9 @@ npm run preview
 src/
 ├── components/
 │   ├── FilterBar.tsx              # Search and filter controls
+│   ├── FilterBar.test.tsx         # Filter control interaction tests
 │   ├── ProductDetailModal.tsx     # Product detail modal
+│   ├── ProductDetailModal.test.tsx # Product detail interaction tests
 │   └── ProductTable.tsx           # Product table and pagination
 ├── data/
 │   └── products.ts                # Local mock product data
@@ -82,7 +89,8 @@ src/
 ├── types/
 │   └── product.ts                 # Product and sort types
 ├── utils/
-│   └── productCatalog.utils.ts    # Formatting, filtering and sorting helpers
+│   ├── productCatalog.utils.ts    # Formatting, filtering and sorting helpers
+│   └── productCatalog.utils.test.ts # Utility unit tests
 ├── App.tsx
 └── App.css
 ~~~
@@ -94,7 +102,7 @@ src/
 - Product images are loaded from picsum.photos as placeholder images.
 - The Edit action opens a detail modal only; creating, updating and deleting products are not implemented.
 - Product data is stored in memory, so changes would not persist after a page reload.
-- Tests were not added in this iteration. The project is prepared for future component and utility tests.
+- Tests cover the main product utility logic and key UI interactions in FilterBar and ProductDetailModal.
 
 ## Possible improvements
 
