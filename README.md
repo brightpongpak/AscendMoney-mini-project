@@ -1,0 +1,105 @@
+# Product Catalog
+
+A small product catalog application built with React, TypeScript, Vite and Ant Design.
+Users can browse products, filter the catalog, sort results and view product details.
+
+## Tech stack
+
+- React
+- TypeScript
+- Vite
+- Ant Design
+- Ant Design Icons
+- Oxlint
+
+## Setup
+
+### Requirements
+
+- Node.js 20 or newer
+- npm
+
+### Install and run
+
+~~~bash
+npm install
+npm run dev
+~~~
+
+Open the local URL shown in the terminal, usually:
+
+~~~text
+http://localhost:5173
+~~~
+
+### Other commands
+
+~~~bash
+# Check TypeScript and create a production build
+npm run build
+
+# Run the linter
+npm run lint
+
+# Preview the production build locally
+npm run preview
+~~~
+
+## Supported features
+
+### Product list
+
+- Displays product image, name, SKU, category, price, stock status and last updated date.
+- Shows 5 products per page.
+- Displays an empty state when no product matches the selected filters.
+
+### Filtering and sorting
+
+- Search by product name.
+- Select one or more categories.
+- Show in-stock products only.
+- Sort by price or updated date.
+- Reset all filters with one button.
+
+### Product details
+
+- Select Edit to open a product detail modal.
+- The modal displays the product image, category, stock status, price, updated date and description.
+- In this version, Edit is used to view details. It does not save changes.
+
+## Project structure
+
+~~~text
+src/
+├── components/
+│   ├── FilterBar.tsx              # Search and filter controls
+│   ├── ProductDetailModal.tsx     # Product detail modal
+│   └── ProductTable.tsx           # Product table and pagination
+├── data/
+│   └── products.ts                # Local mock product data
+├── hooks/
+│   └── useProductCatalog.ts       # Catalog state and business logic
+├── types/
+│   └── product.ts                 # Product and sort types
+├── utils/
+│   └── productCatalog.utils.ts    # Formatting, filtering and sorting helpers
+├── App.tsx
+└── App.css
+~~~
+
+## Trade-offs and assumptions
+
+- The application uses local mock data instead of a backend API because this mini project focuses on the catalog UI and client-side interactions.
+- Filtering, sorting and pagination are handled on the client.
+- Product images are loaded from picsum.photos as placeholder images.
+- The Edit action opens a detail modal only; creating, updating and deleting products are not implemented.
+- Product data is stored in memory, so changes would not persist after a page reload.
+- Tests were not added in this iteration. The project is prepared for future component and utility tests.
+
+## Possible improvements
+
+- Connect the catalog to a real product API.
+- Add loading, error and retry states.
+- Implement create, edit and delete flows with confirmation dialogs.
+- Add unit tests for filtering and sorting, plus component tests for the modal and pagination.
+- Add server-side pagination when the product list becomes large.
